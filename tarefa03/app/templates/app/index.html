@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Dados usuários:</h1>
+    
+    {% for usuario in usuarios %}
+        <p>Nome: {{usuario.nome}}</p>
+        <p>Idade: {{usuario.idade }}</p>
+        <p>Matricula:{{usuario.matricula}}</p>
+        <p>Cidade:{{usuario.Cidade}}</p>
+    {% endfor %}
+</body>
+</html>
