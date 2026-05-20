@@ -6,13 +6,11 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Dados usuários:</h1>
+    <h1>você verá dados de usuários na outra pagina</h1>
     
-    {% for usuario in usuarios %}
-        <p>Nome: {{usuario.nome}}</p>
-        <p>Idade: {{usuario.idade }}</p>
-        <p>Matricula:{{usuario.matricula}}</p>
-        <p>Cidade:{{usuario.Cidade}}</p>
-    {% endfor %}
+    <a href="{% url 'usuarios'%}">
+        dados dos usuários
+    </a>
+
 </body>
 </html>
