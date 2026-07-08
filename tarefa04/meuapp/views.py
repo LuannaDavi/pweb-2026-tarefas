@@ -1,5 +1,11 @@
 from django.shortcuts import render
-
+from datetime import date
+from .models import Tarefa
 
 def index(request):
-    return render(request,"meuapp/index.html")
+    tarefas = Tarefa.objects.all()
+    context = {
+        'tarefas': tarefas,
+        'hoje': date.today()
+    }
+    return render(request, "meuapp/index.html", context)

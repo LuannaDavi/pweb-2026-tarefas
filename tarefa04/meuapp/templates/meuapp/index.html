@@ -1,11 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Lista de Tarefas</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .atrasada { color: red; font-weight: bold; }
+        .concluida { color: green; text-decoration: line-through; }
+    </style>
 </head>
 <body>
-    
-</body>
-</html>
+    <h1>Lista de Tarefas</h1>
+
+    <table border="1" cellpadding="8">
+        <tr>
+            <th>Tarefa</th>
+            <th>Prazo</th>
+            <th>Status</th>
+        </tr>
+        {% for tarefa in tarefas %}
+        <tr>
+            {% if tarefa.status %}
+                <td class="concluida">{{ tarefa.nome }}</td>
+                <td class="concluida">{{ tarefa.prazo }}</td>
+                <td> Concluída</td>
+            {% elif tarefa.prazo < hoje %}
+                <td class="atrasada">{{ tarefa.nome }}</td>
+                <td class="atrasada">{{ tarefa.prazo }}</td>
+                <td> Atrasada</td>
+            {% else %}
+                <td>{{ tarefa.nome }}</td>
+                <td>{{ tarefa.prazo }}</td>
+                <td> Pendente</td>
+            {% endif %}
+        {% endfor %}
+        </tr>
+        <tr>
+            <td colspan="3">Nenhuma tarefa cadastrada.</td>
