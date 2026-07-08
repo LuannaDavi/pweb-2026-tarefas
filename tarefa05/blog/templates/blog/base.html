@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block titulo %}Lista de Tarefas{% endblock %}</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        nav a { margin-right: 10px; }
+        .atrasada { color: red; font-weight: bold; }
+        .concluida { color: green; text-decoration: line-through; }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="{% url 'tarefas' %}">Lista de Tarefas</a>
+    </nav>
+    <hr>
+    {% block conteudo %}{% endblock %}
+</body>
+</html>
